@@ -1,0 +1,274 @@
+{
+    "accessors": {
+        "accessor_22": {
+            "bufferView": "bufferView_31",
+            "byteOffset": 0,
+            "byteStride": 0,
+            "componentType": 5123,
+            "count": 96,
+            "type": "SCALAR"
+        },
+        "accessor_25": {
+            "bufferView": "bufferView_31",
+            "byteOffset": 192,
+            "byteStride": 0,
+            "componentType": 5123,
+            "count": 9216,
+            "type": "SCALAR"
+        },
+        "accessor_27": {
+            "bufferView": "bufferView_32",
+            "byteOffset": 0,
+            "byteStride": 12,
+            "componentType": 5126,
+            "count": 1568,
+            "max": [
+                3.8225,
+                1.56543,
+                0.726445
+            ],
+            "min": [
+                -3.8225,
+                -1.72311,
+                -0.725549
+            ],
+            "type": "VEC3"
+        },
+        "accessor_29": {
+            "bufferView": "bufferView_32",
+            "byteOffset": 18816,
+            "byteStride": 12,
+            "componentType": 5126,
+            "count": 1568,
+            "max": [
+                1,
+                0.999725,
+                0.999176
+            ],
+            "min": [
+                -1,
+                -0.999725,
+                -0.999176
+            ],
+            "type": "VEC3"
+        }
+    },
+    "animations": {},
+    "asset": {
+        "generator": "collada2gltf@173625dc5ff1b7e8046666be1f3ca2835512ac08",
+        "premultipliedAlpha": true,
+        "profile": "WebGL 1.0.2",
+        "version": 0.8
+    },
+    "bufferViews": {
+        "bufferView_31": {
+            "buffer": "mesh",
+            "byteLength": 18624,
+            "byteOffset": 0,
+            "target": 34963
+        },
+        "bufferView_32": {
+            "buffer": "mesh",
+            "byteLength": 37632,
+            "byteOffset": 18624,
+            "target": 34962
+        }
+    },
+    "buffers": {
+        "mesh": {
+            "byteLength": 56256,
+            "type": "arraybuffer",
+            "uri": "mesh.bin"
+        }
+    },
+    "materials": {
+        "__glTF__defaultMaterial0": {
+            "instanceTechnique": {
+                "technique": "technique0",
+                "values": {
+                    "diffuse": [
+                        1,
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            },
+            "name": "__glTF__defaultMaterial0"
+        },
+        "__glTF__defaultMaterial1": {
+            "instanceTechnique": {
+                "technique": "technique0",
+                "values": {
+                    "diffuse": [
+                        1,
+                        1,
+                        1,
+                        1
+                    ]
+                }
+            },
+            "name": "__glTF__defaultMaterial1"
+        }
+    },
+    "meshes": {
+        "E-mesh": {
+            "name": "E",
+            "primitives": [
+                {
+                    "attributes": {
+                        "POSITION": "accessor_27"
+                    },
+                    "indices": "accessor_22",
+                    "material": "__glTF__defaultMaterial1",
+                    "primitive": 1
+                },
+                {
+                    "attributes": {
+                        "NORMAL": "accessor_29",
+                        "POSITION": "accessor_27"
+                    },
+                    "indices": "accessor_25",
+                    "material": "__glTF__defaultMaterial0",
+                    "primitive": 4
+                }
+            ]
+        }
+    },
+    "nodes": {
+        "Cube": {
+            "children": [],
+            "matrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                7.54979e-08,
+                1,
+                0,
+                0,
+                -1,
+                7.54979e-08,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "meshes": [
+                "E-mesh"
+            ],
+            "name": "Cube"
+        },
+        "node_1": {
+            "children": [
+                "Cube"
+            ],
+            "matrix": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                -1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "name": "Y_UP_Transform"
+        }
+    },
+    "programs": {
+        "program_0": {
+            "attributes": [
+                "a_position"
+            ],
+            "fragmentShader": "mesh0FS",
+            "vertexShader": "mesh0VS"
+        }
+    },
+    "scene": "defaultScene",
+    "scenes": {
+        "defaultScene": {
+            "nodes": [
+                "node_1"
+            ]
+        }
+    },
+    "shaders": {
+        "mesh0FS": {
+            "type": 35632,
+            "uri": "mesh0FS.glsl"
+        },
+        "mesh0VS": {
+            "type": 35633,
+            "uri": "mesh0VS.glsl"
+        }
+    },
+    "skins": {},
+    "techniques": {
+        "technique0": {
+            "parameters": {
+                "diffuse": {
+                    "type": 35666
+                },
+                "modelViewMatrix": {
+                    "semantic": "MODELVIEW",
+                    "type": 35676
+                },
+                "position": {
+                    "semantic": "POSITION",
+                    "type": 35665
+                },
+                "projectionMatrix": {
+                    "semantic": "PROJECTION",
+                    "type": 35676
+                }
+            },
+            "pass": "defaultPass",
+            "passes": {
+                "defaultPass": {
+                    "details": {
+                        "commonProfile": {
+                            "extras": {
+                                "doubleSided": false
+                            },
+                            "lightingModel": "Phong",
+                            "parameters": [
+                                "diffuse",
+                                "modelViewMatrix",
+                                "projectionMatrix"
+                            ]
+                        },
+                        "type": "COLLADA-1.4.1/commonProfile"
+                    },
+                    "instanceProgram": {
+                        "attributes": {
+                            "a_position": "position"
+                        },
+                        "program": "program_0",
+                        "uniforms": {
+                            "u_diffuse": "diffuse",
+                            "u_modelViewMatrix": "modelViewMatrix",
+                            "u_projectionMatrix": "projectionMatrix"
+                        }
+                    },
+                    "states": {
+                        "enable": [
+                            2884,
+                            2929
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
