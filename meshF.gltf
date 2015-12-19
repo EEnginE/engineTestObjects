@@ -1,46 +1,54 @@
 {
     "accessors": {
-        "accessor_16": {
-            "bufferView": "bufferView_22",
+        "accessor_22": {
+            "bufferView": "bufferView_31",
             "byteOffset": 0,
             "byteStride": 0,
             "componentType": 5123,
-            "count": 1137,
+            "count": 96,
             "type": "SCALAR"
         },
-        "accessor_18": {
-            "bufferView": "bufferView_23",
+        "accessor_25": {
+            "bufferView": "bufferView_31",
+            "byteOffset": 192,
+            "byteStride": 0,
+            "componentType": 5123,
+            "count": 9216,
+            "type": "SCALAR"
+        },
+        "accessor_27": {
+            "bufferView": "bufferView_32",
             "byteOffset": 0,
             "byteStride": 12,
             "componentType": 5126,
-            "count": 188,
+            "count": 9272,
             "max": [
-                1,
-                1,
-                1
+                3.8225,
+                1.56543,
+                0.726445
             ],
             "min": [
-                -1.3,
-                -1,
-                -1
+                -3.8225,
+                -1.72311,
+                -0.725549
             ],
             "type": "VEC3"
         },
-        "accessor_20": {
-            "bufferView": "bufferView_23",
-            "byteOffset": 2256,
+        "accessor_29": {
+            "bufferView": "bufferView_32",
+            "byteOffset": 111264,
             "byteStride": 12,
             "componentType": 5126,
-            "count": 188,
+            "count": 9272,
             "max": [
-                0.999961,
-                1,
-                1
+                0.997598,
+                0.998126,
+                0.998941
             ],
             "min": [
-                -1,
-                -1,
-                -1
+                -0.997598,
+                -0.999943,
+                -0.998941
             ],
             "type": "VEC3"
         }
@@ -56,77 +64,78 @@
         "version": "1.0"
     },
     "bufferViews": {
-        "bufferView_22": {
-            "buffer": "golf-ball",
-            "byteLength": 2276,
+        "bufferView_31": {
+            "buffer": "meshF",
+            "byteLength": 18624,
             "byteOffset": 0,
             "target": 34963
         },
-        "bufferView_23": {
-            "buffer": "golf-ball",
-            "byteLength": 4512,
-            "byteOffset": 2276,
+        "bufferView_32": {
+            "buffer": "meshF",
+            "byteLength": 222528,
+            "byteOffset": 18624,
             "target": 34962
         }
     },
     "buffers": {
-        "golf-ball": {
-            "byteLength": 6788,
+        "meshF": {
+            "byteLength": 241152,
             "type": "arraybuffer",
-            "uri": "golf-ball.bin"
+            "uri": "meshF.bin"
         }
     },
     "materials": {
-        "None_005-effect": {
-            "name": "None_005",
+        "__glTF__defaultMaterial0": {
+            "name": "__glTF__defaultMaterial0",
             "technique": "technique0",
             "values": {
-                "ambient": [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
                 "diffuse": [
-                    0.64,
-                    0.64,
-                    0.64,
+                    1,
+                    1,
+                    1,
                     1
-                ],
-                "emission": [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
-                "shininess": 50,
-                "specular": [
-                    0.5,
-                    0.5,
-                    0.5,
+                ]
+            }
+        },
+        "__glTF__defaultMaterial1": {
+            "name": "__glTF__defaultMaterial1",
+            "technique": "technique0",
+            "values": {
+                "diffuse": [
+                    1,
+                    1,
+                    1,
                     1
                 ]
             }
         }
     },
     "meshes": {
-        "Icosphere-mesh": {
-            "name": "Icosphere",
+        "E-mesh": {
+            "name": "E",
             "primitives": [
                 {
                     "attributes": {
-                        "NORMAL": "accessor_20",
-                        "POSITION": "accessor_18"
+                        "POSITION": "accessor_27"
                     },
-                    "indices": "accessor_16",
-                    "material": "None_005-effect",
+                    "indices": "accessor_22",
+                    "material": "__glTF__defaultMaterial1",
+                    "mode": 1
+                },
+                {
+                    "attributes": {
+                        "NORMAL": "accessor_29",
+                        "POSITION": "accessor_27"
+                    },
+                    "indices": "accessor_25",
+                    "material": "__glTF__defaultMaterial0",
                     "mode": 4
                 }
             ]
         }
     },
     "nodes": {
-        "Icosphere": {
+        "Cube": {
             "children": [],
             "matrix": [
                 1,
@@ -134,12 +143,12 @@
                 0,
                 0,
                 0,
-                -4.37114e-08,
+                7.54979e-08,
                 1,
                 0,
                 0,
                 -1,
-                -4.37114e-08,
+                7.54979e-08,
                 0,
                 0,
                 0,
@@ -147,13 +156,13 @@
                 1
             ],
             "meshes": [
-                "Icosphere-mesh"
+                "E-mesh"
             ],
-            "name": "Icosphere"
+            "name": "Cube"
         },
         "node_1": {
             "children": [
-                "Icosphere"
+                "Cube"
             ],
             "matrix": [
                 1,
@@ -179,11 +188,10 @@
     "programs": {
         "program_0": {
             "attributes": [
-                "a_normal",
                 "a_position"
             ],
-            "fragmentShader": "golf-ball0FS",
-            "vertexShader": "golf-ball0VS"
+            "fragmentShader": "meshF0FS",
+            "vertexShader": "meshF0VS"
         }
     },
     "scene": "defaultScene",
@@ -195,43 +203,28 @@
         }
     },
     "shaders": {
-        "golf-ball0FS": {
+        "meshF0FS": {
             "type": 35632,
-            "uri": "golf-ball0FS.glsl"
+            "uri": "meshF0FS.glsl"
         },
-        "golf-ball0VS": {
+        "meshF0VS": {
             "type": 35633,
-            "uri": "golf-ball0VS.glsl"
+            "uri": "meshF0VS.glsl"
         }
     },
     "skins": {},
     "techniques": {
         "technique0": {
             "attributes": {
-                "a_normal": "normal",
                 "a_position": "position"
             },
             "parameters": {
-                "ambient": {
-                    "type": 35666
-                },
                 "diffuse": {
-                    "type": 35666
-                },
-                "emission": {
                     "type": 35666
                 },
                 "modelViewMatrix": {
                     "semantic": "MODELVIEW",
                     "type": 35676
-                },
-                "normal": {
-                    "semantic": "NORMAL",
-                    "type": 35665
-                },
-                "normalMatrix": {
-                    "semantic": "MODELVIEWINVERSETRANSPOSE",
-                    "type": 35675
                 },
                 "position": {
                     "semantic": "POSITION",
@@ -240,12 +233,6 @@
                 "projectionMatrix": {
                     "semantic": "PROJECTION",
                     "type": 35676
-                },
-                "shininess": {
-                    "type": 5126
-                },
-                "specular": {
-                    "type": 35666
                 }
             },
             "program": "program_0",
@@ -256,14 +243,9 @@
                 ]
             },
             "uniforms": {
-                "u_ambient": "ambient",
                 "u_diffuse": "diffuse",
-                "u_emission": "emission",
                 "u_modelViewMatrix": "modelViewMatrix",
-                "u_normalMatrix": "normalMatrix",
-                "u_projectionMatrix": "projectionMatrix",
-                "u_shininess": "shininess",
-                "u_specular": "specular"
+                "u_projectionMatrix": "projectionMatrix"
             }
         }
     }

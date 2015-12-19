@@ -42,73 +42,72 @@
             "count": 1568,
             "max": [
                 1,
-                0.999725,
-                0.999176
+                0.999739,
+                0.999164
             ],
             "min": [
                 -1,
-                -0.999725,
-                -0.999176
+                -0.999739,
+                -0.999164
             ],
             "type": "VEC3"
         }
     },
     "animations": {},
     "asset": {
-        "generator": "collada2gltf@173625dc5ff1b7e8046666be1f3ca2835512ac08",
+        "generator": "collada2gltf@949ce5f662c109eb7d327ab8c65ac884cb71d3b2",
         "premultipliedAlpha": true,
-        "profile": "WebGL 1.0.2",
-        "version": 0.8
+        "profile": {
+            "api": "WebGL",
+            "version": "1.0.2"
+        },
+        "version": "1.0"
     },
     "bufferViews": {
         "bufferView_31": {
-            "buffer": "mesh",
+            "buffer": "meshS",
             "byteLength": 18624,
             "byteOffset": 0,
             "target": 34963
         },
         "bufferView_32": {
-            "buffer": "mesh",
+            "buffer": "meshS",
             "byteLength": 37632,
             "byteOffset": 18624,
             "target": 34962
         }
     },
     "buffers": {
-        "mesh": {
+        "meshS": {
             "byteLength": 56256,
             "type": "arraybuffer",
-            "uri": "mesh.bin"
+            "uri": "meshS.bin"
         }
     },
     "materials": {
         "__glTF__defaultMaterial0": {
-            "instanceTechnique": {
-                "technique": "technique0",
-                "values": {
-                    "diffuse": [
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
-                }
-            },
-            "name": "__glTF__defaultMaterial0"
+            "name": "__glTF__defaultMaterial0",
+            "technique": "technique0",
+            "values": {
+                "diffuse": [
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            }
         },
         "__glTF__defaultMaterial1": {
-            "instanceTechnique": {
-                "technique": "technique0",
-                "values": {
-                    "diffuse": [
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
-                }
-            },
-            "name": "__glTF__defaultMaterial1"
+            "name": "__glTF__defaultMaterial1",
+            "technique": "technique0",
+            "values": {
+                "diffuse": [
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            }
         }
     },
     "meshes": {
@@ -121,7 +120,7 @@
                     },
                     "indices": "accessor_22",
                     "material": "__glTF__defaultMaterial1",
-                    "primitive": 1
+                    "mode": 1
                 },
                 {
                     "attributes": {
@@ -130,7 +129,7 @@
                     },
                     "indices": "accessor_25",
                     "material": "__glTF__defaultMaterial0",
-                    "primitive": 4
+                    "mode": 4
                 }
             ]
         }
@@ -191,8 +190,8 @@
             "attributes": [
                 "a_position"
             ],
-            "fragmentShader": "mesh0FS",
-            "vertexShader": "mesh0VS"
+            "fragmentShader": "meshS0FS",
+            "vertexShader": "meshS0VS"
         }
     },
     "scene": "defaultScene",
@@ -204,18 +203,21 @@
         }
     },
     "shaders": {
-        "mesh0FS": {
+        "meshS0FS": {
             "type": 35632,
-            "uri": "mesh0FS.glsl"
+            "uri": "meshS0FS.glsl"
         },
-        "mesh0VS": {
+        "meshS0VS": {
             "type": 35633,
-            "uri": "mesh0VS.glsl"
+            "uri": "meshS0VS.glsl"
         }
     },
     "skins": {},
     "techniques": {
         "technique0": {
+            "attributes": {
+                "a_position": "position"
+            },
             "parameters": {
                 "diffuse": {
                     "type": 35666
@@ -233,41 +235,17 @@
                     "type": 35676
                 }
             },
-            "pass": "defaultPass",
-            "passes": {
-                "defaultPass": {
-                    "details": {
-                        "commonProfile": {
-                            "extras": {
-                                "doubleSided": false
-                            },
-                            "lightingModel": "Phong",
-                            "parameters": [
-                                "diffuse",
-                                "modelViewMatrix",
-                                "projectionMatrix"
-                            ]
-                        },
-                        "type": "COLLADA-1.4.1/commonProfile"
-                    },
-                    "instanceProgram": {
-                        "attributes": {
-                            "a_position": "position"
-                        },
-                        "program": "program_0",
-                        "uniforms": {
-                            "u_diffuse": "diffuse",
-                            "u_modelViewMatrix": "modelViewMatrix",
-                            "u_projectionMatrix": "projectionMatrix"
-                        }
-                    },
-                    "states": {
-                        "enable": [
-                            2884,
-                            2929
-                        ]
-                    }
-                }
+            "program": "program_0",
+            "states": {
+                "enable": [
+                    2929,
+                    2884
+                ]
+            },
+            "uniforms": {
+                "u_diffuse": "diffuse",
+                "u_modelViewMatrix": "modelViewMatrix",
+                "u_projectionMatrix": "projectionMatrix"
             }
         }
     }
